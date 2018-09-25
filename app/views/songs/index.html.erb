@@ -1,0 +1,20 @@
+<h1>All the Songs:</h1><br><br><br>
+
+<% @songs.each do |song| %>
+<table>
+<thead>
+  <tr>
+<h2> <%= song.title %> </h2><br>
+</tr>
+</thead>
+<tbody>
+  <tr>
+Performed by:<%= song.artist_name %><br>
+<%= song.genre %><br>
+<% if song.released %>
+Released <%= song.release_year %><br>
+<% end %><br>
+</tr>
+</tbody>
+</table>
+<% end %>
