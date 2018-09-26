@@ -1,0 +1,5 @@
+<h1>All them songs</h1>
+<% @songs.each do |song| %>
+  <%=link_to song.title, song %>
+  <%= link_to "Remove", song, :method => :delete, :data => {:confirm => "You Sure?"}%><br>
+<% end  %>
