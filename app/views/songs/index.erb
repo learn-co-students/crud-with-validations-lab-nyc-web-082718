@@ -1,0 +1,29 @@
+
+
+<table>
+    <caption>All them songs</caption>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th scope="col">Released</th>
+            <th scope="col">Release Year</th>
+            <th scope="col">Artist Name</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <% @songs.each do |song| %>
+    <tbody>
+        <tr>
+            <th scope="row"><%=link_to song.title, song %></th>
+            <td><%= song.released %></td>
+            <td><%= song.release_year %></td>
+            <td><%= song.artist_name %></td>
+            <td><%= song.genre %></td>
+            <td><%= link_to 'Delete', song_path(song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end  %>
+
+    </tbody>
+
+</table>
